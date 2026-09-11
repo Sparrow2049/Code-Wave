@@ -1,11 +1,18 @@
 import type { Metadata } from "next";
 
+<<<<<<< HEAD
 import { ThemeProvider } from "next-themes";
 
 import "./globals.css";
 import { IdentityProvider } from "@/lib/identity";
 import Header from "@/components/Header";
 import ThemeToggle from "@/components/ThemeToggle";
+=======
+import "./globals.css";
+import { IdentityProvider } from "@/lib/identity";
+import Header from "@/components/Header";
+
+>>>>>>> 79383eca9c0fc748c5e216de8c09a5ef8020405c
 
 
 export const metadata: Metadata = {

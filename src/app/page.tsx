@@ -1,7 +1,10 @@
 import Link from "next/link";
 import { getCourses, listQuestions, listResources } from "@/lib/db";
 import CourseBadge from "@/components/CourseBadge";
+<<<<<<< HEAD
 import ThemeToggle from "@/components/ThemeToggle";
+=======
+>>>>>>> 79383eca9c0fc748c5e216de8c09a5ef8020405c
 
 export default function HomePage() {
   const courses = getCourses();
@@ -13,8 +16,11 @@ export default function HomePage() {
       <h1 className="font-display text-4xl sm:text-5xl leading-tight text-text max-w-xl">
         Get through the semester with people who&apos;ve done it
       </h1>
+<<<<<<< HEAD
         
       
+=======
+>>>>>>> 79383eca9c0fc748c5e216de8c09a5ef8020405c
       <p className="mt-4 max-w-md text-text-muted">
         Two tools, one place: ask the students who already survived a
         course, and find the notes and past papers they used to do it.
