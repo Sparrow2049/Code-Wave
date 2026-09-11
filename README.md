@@ -55,7 +55,7 @@ npm run build    # production build, also type-checks everything
 
 1. Open the app, set a name in the header, and pick a role (**Freshman** or
    **Senior**) — this is just a display label, not a real account.
-2. Go to a course hub, e.g. `/courses/CS101`.
+2. Go to a course hub, e.g. `/courses/MATH100` (Pre-Calculus).
 3. As a freshman: ask a question, or drop a link under "Add a resource."
 4. Switch your role to **Senior** (click *edit* in the header) and answer
    the question you just asked — watch it flip to "Answered by a senior."
@@ -92,8 +92,13 @@ waypoint/
 └── assets/                 ← screenshots for this README
 ```
 
-## Course codes
+## Where the seed data comes from
 
-The seed data uses placeholder course codes (CS101, CS201, CS210, CS330).
-Swap `src/lib/seed.ts` for your own school's real courses before you take
-the demo screenshots — it'll land better with judges from your program.
+The resources in `src/lib/seed.ts` link directly into the real
+[HITSZCS](https://github.com/elalamiimed/HITSZCS) repository — an
+existing, community-maintained archive of HITSZ CS freshman course
+materials. The two seed questions are real questions a freshman actually
+has, left unanswered on purpose (a fabricated "senior answer" to "I failed
+my placement exam, what do I do" would be actively bad advice — that
+needs a real senior). Add courses or resources by extending the arrays in
+`seed.ts`; the shape of each entry is documented by `src/lib/types.ts`.

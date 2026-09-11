@@ -1,84 +1,158 @@
 import { DbShape } from "./types";
 
 // Seed data exists for one reason: judges only see screenshots, not a live
-// demo (house rule 5). An empty app screenshots badly. Swap these course
-// codes for your own school's if you want the demo to feel local.
+// demo (house rule 5). An empty app screenshots badly.
+//
+// Resources below link directly into the real HITSZCS repo
+// (github.com/elalamiimed/HITSZCS/tree/main/Freshman), verified folder by
+// folder via a sparse clone — not guessed. If HITSZCS reorganizes that repo,
+// these links may need updating.
 
 const now = new Date();
 const daysAgo = (n: number) =>
   new Date(now.getTime() - n * 24 * 60 * 60 * 1000).toISOString();
 
+const HITSZCS_FRESHMAN =
+  "https://github.com/elalamiimed/HITSZCS/tree/main/Freshman";
+
 export const seedData: DbShape = {
   courses: [
-    { code: "CS101", name: "Intro to Programming" },
-    { code: "CS201", name: "Data Structures" },
-    { code: "CS210", name: "Discrete Mathematics" },
-    { code: "CS330", name: "Operating Systems" },
+    { code: "MATH100", name: "Pre-Calculus" },
+    { code: "MATH101", name: "Calculus" },
+    { code: "MATH102", name: "Linear Algebra" },
+    { code: "PHYS101", name: "College Physics IA" },
+    { code: "PHYS102", name: "Electric Circuits" },
+    { code: "PHYS103", name: "Physics Lab IA" },
+    { code: "CHIN101", name: "Elementary Chinese I" },
+    { code: "CHIN102", name: "Elementary Chinese II" },
+    { code: "GEN100", name: "General / Freshman Life" },
   ],
   resources: [
+    // Pre-Calculus
     {
       id: "r1",
-      courseCode: "CS101",
-      title: "Week 1–4 lecture notes (annotated)",
-      type: "notes",
-      url: "https://example.com/cs101-notes",
-      addedBy: "Wei Chen",
-      createdAt: daysAgo(6),
+      courseCode: "MATH100",
+      title: "Pre-Calculus — full folder (notes, homework, exam papers)",
+      type: "repo",
+      url: `${HITSZCS_FRESHMAN}/Pre-Calculus`,
+      addedBy: "HITSZCS archive",
+      createdAt: daysAgo(9),
     },
     {
       id: "r2",
-      courseCode: "CS101",
-      title: "2025 midterm, with worked solutions",
+      courseCode: "MATH100",
+      title: "Pre-Calculus exam model papers",
       type: "past-paper",
-      url: "https://example.com/cs101-midterm-2025",
-      addedBy: "Wei Chen",
-      createdAt: daysAgo(5),
+      url: `${HITSZCS_FRESHMAN}/Pre-Calculus/Exam%20model%20paper`,
+      addedBy: "HITSZCS archive",
+      createdAt: daysAgo(8),
     },
+    // Calculus
     {
       id: "r3",
-      courseCode: "CS201",
-      title: "HITSZCS/data-structures-labs",
-      type: "repo",
-      url: "https://github.com/example/data-structures-labs",
-      addedBy: "Priya N.",
-      createdAt: daysAgo(3),
+      courseCode: "MATH101",
+      title: "Calculus lecture slides",
+      type: "notes",
+      url: `${HITSZCS_FRESHMAN}/Calculus/Lessons`,
+      addedBy: "HITSZCS archive",
+      createdAt: daysAgo(7),
     },
     {
       id: "r4",
-      courseCode: "CS210",
-      title: "Proof techniques cheat sheet",
+      courseCode: "MATH101",
+      title: "Calculus model tests",
+      type: "past-paper",
+      url: `${HITSZCS_FRESHMAN}/Calculus/Model%20Test`,
+      addedBy: "HITSZCS archive",
+      createdAt: daysAgo(6),
+    },
+    // Linear Algebra (the real folder name has a trailing space — kept
+    // intentionally so the link actually resolves)
+    {
+      id: "r5",
+      courseCode: "MATH102",
+      title: "Linear Algebra — 2025 materials",
+      type: "repo",
+      url: `${HITSZCS_FRESHMAN}/Linear%20Algebra%20/2025`,
+      addedBy: "HITSZCS archive",
+      createdAt: daysAgo(5),
+    },
+    // College Physics IA
+    {
+      id: "r6",
+      courseCode: "PHYS101",
+      title: "College Physics IA lecture slides",
       type: "notes",
-      url: "https://example.com/discrete-proofs",
-      addedBy: "Marcus O.",
+      url: `${HITSZCS_FRESHMAN}/College%20Physics%20IA/Lessons`,
+      addedBy: "HITSZCS archive",
+      createdAt: daysAgo(6),
+    },
+    {
+      id: "r7",
+      courseCode: "PHYS101",
+      title: "College Physics IA quizzes",
+      type: "past-paper",
+      url: `${HITSZCS_FRESHMAN}/College%20Physics%20IA/Quiz`,
+      addedBy: "HITSZCS archive",
+      createdAt: daysAgo(4),
+    },
+    // Electric Circuits
+    {
+      id: "r8",
+      courseCode: "PHYS102",
+      title: "Electric Circuits lecture slides",
+      type: "notes",
+      url: `${HITSZCS_FRESHMAN}/Electric%20Circuits/Lessons`,
+      addedBy: "HITSZCS archive",
+      createdAt: daysAgo(3),
+    },
+    // Physics Lab IA — the actual lab-reports-and-experiments folder
+    {
+      id: "r9",
+      courseCode: "PHYS103",
+      title: "Physics Lab IA — instruction book & sample experiment reports",
+      type: "repo",
+      url: `${HITSZCS_FRESHMAN}/Physics%20Lab%20IA`,
+      addedBy: "HITSZCS archive",
       createdAt: daysAgo(2),
+    },
+    // Chinese
+    {
+      id: "r10",
+      courseCode: "CHIN101",
+      title: "Elementary Chinese I — 2025 materials",
+      type: "repo",
+      url: `${HITSZCS_FRESHMAN}/Elementary%20Chinese%20I/2025`,
+      addedBy: "HITSZCS archive",
+      createdAt: daysAgo(5),
+    },
+    {
+      id: "r11",
+      courseCode: "CHIN102",
+      title: "Elementary Chinese II — course materials",
+      type: "repo",
+      url: `${HITSZCS_FRESHMAN}/Elementary%20Chinese%20II`,
+      addedBy: "HITSZCS archive",
+      createdAt: daysAgo(4),
     },
   ],
   questions: [
     {
       id: "q1",
-      courseCode: "CS101",
-      title: "When do I use a while loop vs a for loop?",
-      body: "I get the syntax for both but I keep guessing wrong on which one 'fits' a problem. Is there an actual rule of thumb?",
-      askedBy: "Alex T.",
-      resolved: true,
-      createdAt: daysAgo(4),
-      answers: [
-        {
-          id: "a1",
-          questionId: "q1",
-          body: "Rule of thumb: if you know the number of iterations before the loop starts, use for. If you're looping until some condition becomes true and you don't know how many times that'll take, use while. Most textbook 'off by one' pain comes from forcing a for loop into a while-shaped problem.",
-          answeredBy: "Wei Chen",
-          role: "senior",
-          createdAt: daysAgo(4),
-        },
-      ],
+      courseCode: "GEN100",
+      title: "What was the hardest class in freshman year?",
+      body: "Trying to plan out how much time to budget for each course this term — curious what upperclassmen found hardest and why.",
+      askedBy: "New Freshman",
+      resolved: false,
+      createdAt: daysAgo(2),
+      answers: [],
     },
     {
       id: "q2",
-      courseCode: "CS201",
-      title: "Is it normal to still not 'get' recursion in week 3?",
-      body: "I can trace through simple examples on paper but writing my own recursive function from scratch feels impossible.",
-      askedBy: "Jordan K.",
+      courseCode: "MATH100",
+      title: "I failed my Pre-Calculus initial exam — what should I do now?",
+      body: "Just got my result back and I didn't pass the Pre-Calculus placement exam. Not sure what happens next — do I retake it, get placed in a different track, or something else? Has anyone been through this?",
+      askedBy: "New Freshman",
       resolved: false,
       createdAt: daysAgo(1),
       answers: [],
