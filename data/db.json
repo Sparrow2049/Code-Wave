@@ -1,0 +1,181 @@
+{
+  "courses": [
+    {
+      "code": "MATH100",
+      "name": "Pre-Calculus"
+    },
+    {
+      "code": "MATH101",
+      "name": "Calculus"
+    },
+    {
+      "code": "MATH102",
+      "name": "Linear Algebra"
+    },
+    {
+      "code": "PHYS101",
+      "name": "College Physics IA"
+    },
+    {
+      "code": "PHYS102",
+      "name": "Electric Circuits"
+    },
+    {
+      "code": "PHYS103",
+      "name": "Physics Lab IA"
+    },
+    {
+      "code": "CHIN101",
+      "name": "Elementary Chinese I"
+    },
+    {
+      "code": "CHIN102",
+      "name": "Elementary Chinese II"
+    },
+    {
+      "code": "GEN100",
+      "name": "General / Freshman Life"
+    }
+  ],
+  "resources": [
+    {
+      "id": "r1",
+      "courseCode": "MATH100",
+      "title": "Pre-Calculus — full folder (notes, homework, exam papers)",
+      "type": "repo",
+      "url": "https://github.com/elalamiimed/HITSZCS/tree/main/Freshman/Pre-Calculus",
+      "addedBy": "HITSZCS archive",
+      "createdAt": "2026-09-02T04:11:46.588Z"
+    },
+    {
+      "id": "r2",
+      "courseCode": "MATH100",
+      "title": "Pre-Calculus exam model papers",
+      "type": "past-paper",
+      "url": "https://github.com/elalamiimed/HITSZCS/tree/main/Freshman/Pre-Calculus/Exam%20model%20paper",
+      "addedBy": "HITSZCS archive",
+      "createdAt": "2026-09-03T04:11:46.588Z"
+    },
+    {
+      "id": "r3",
+      "courseCode": "MATH101",
+      "title": "Calculus lecture slides",
+      "type": "notes",
+      "url": "https://github.com/elalamiimed/HITSZCS/tree/main/Freshman/Calculus/Lessons",
+      "addedBy": "HITSZCS archive",
+      "createdAt": "2026-09-04T04:11:46.588Z"
+    },
+    {
+      "id": "r4",
+      "courseCode": "MATH101",
+      "title": "Calculus model tests",
+      "type": "past-paper",
+      "url": "https://github.com/elalamiimed/HITSZCS/tree/main/Freshman/Calculus/Model%20Test",
+      "addedBy": "HITSZCS archive",
+      "createdAt": "2026-09-05T04:11:46.588Z"
+    },
+    {
+      "id": "r5",
+      "courseCode": "MATH102",
+      "title": "Linear Algebra — 2025 materials",
+      "type": "repo",
+      "url": "https://github.com/elalamiimed/HITSZCS/tree/main/Freshman/Linear%20Algebra%20/2025",
+      "addedBy": "HITSZCS archive",
+      "createdAt": "2026-09-06T04:11:46.588Z"
+    },
+    {
+      "id": "r6",
+      "courseCode": "PHYS101",
+      "title": "College Physics IA lecture slides",
+      "type": "notes",
+      "url": "https://github.com/elalamiimed/HITSZCS/tree/main/Freshman/College%20Physics%20IA/Lessons",
+      "addedBy": "HITSZCS archive",
+      "createdAt": "2026-09-05T04:11:46.588Z"
+    },
+    {
+      "id": "r7",
+      "courseCode": "PHYS101",
+      "title": "College Physics IA quizzes",
+      "type": "past-paper",
+      "url": "https://github.com/elalamiimed/HITSZCS/tree/main/Freshman/College%20Physics%20IA/Quiz",
+      "addedBy": "HITSZCS archive",
+      "createdAt": "2026-09-07T04:11:46.588Z"
+    },
+    {
+      "id": "r8",
+      "courseCode": "PHYS102",
+      "title": "Electric Circuits lecture slides",
+      "type": "notes",
+      "url": "https://github.com/elalamiimed/HITSZCS/tree/main/Freshman/Electric%20Circuits/Lessons",
+      "addedBy": "HITSZCS archive",
+      "createdAt": "2026-09-08T04:11:46.588Z"
+    },
+    {
+      "id": "r9",
+      "courseCode": "PHYS103",
+      "title": "Physics Lab IA — instruction book & sample experiment reports",
+      "type": "repo",
+      "url": "https://github.com/elalamiimed/HITSZCS/tree/main/Freshman/Physics%20Lab%20IA",
+      "addedBy": "HITSZCS archive",
+      "createdAt": "2026-09-09T04:11:46.588Z"
+    },
+    {
+      "id": "r10",
+      "courseCode": "CHIN101",
+      "title": "Elementary Chinese I — 2025 materials",
+      "type": "repo",
+      "url": "https://github.com/elalamiimed/HITSZCS/tree/main/Freshman/Elementary%20Chinese%20I/2025",
+      "addedBy": "HITSZCS archive",
+      "createdAt": "2026-09-06T04:11:46.588Z"
+    },
+    {
+      "id": "r11",
+      "courseCode": "CHIN102",
+      "title": "Elementary Chinese II — course materials",
+      "type": "repo",
+      "url": "https://github.com/elalamiimed/HITSZCS/tree/main/Freshman/Elementary%20Chinese%20II",
+      "addedBy": "HITSZCS archive",
+      "createdAt": "2026-09-07T04:11:46.588Z"
+    }
+  ],
+  "questions": [
+    {
+      "id": "q1",
+      "courseCode": "GEN100",
+      "title": "What was the hardest class in freshman year?",
+      "body": "Trying to plan out how much time to budget for each course this term — curious what upperclassmen found hardest and why.",
+      "askedBy": "New Freshman",
+      "resolved": true,
+      "createdAt": "2026-09-09T04:11:46.588Z",
+      "answers": [
+        {
+          "id": "65b35827-5d43-450b-92aa-0063906118a6",
+          "questionId": "q1",
+          "body": "In my experience the hardest class was Physics IA. It was mostly because we didn't understand the subject very well. On top of that the teacher was very harsh on us.",
+          "answeredBy": "Arthur",
+          "role": "senior",
+          "createdAt": "2026-09-11T04:13:31.587Z"
+        }
+      ]
+    },
+    {
+      "id": "q2",
+      "courseCode": "MATH100",
+      "title": "I failed my Pre-Calculus initial exam — what should I do now?",
+      "body": "Just got my result back and I didn't pass the Pre-Calculus placement exam. Not sure what happens next — do I retake it, get placed in a different track, or something else? Has anyone been through this?",
+      "askedBy": "New Freshman",
+      "resolved": true,
+      "createdAt": "2026-09-10T04:11:46.588Z",
+      "answers": [
+        {
+          "id": "392ec441-cfde-4229-bdc2-405c1c7ad3a9",
+          "questionId": "q2",
+          "body": "No you just learn Pre-Calculus as normal. People who passed will not study Pre-Calculus that semester.",
+          "answeredBy": "Arthur",
+          "role": "senior",
+          "createdAt": "2026-09-11T04:12:39.570Z"
+        }
+      ]
+    }
+  ]
+}
