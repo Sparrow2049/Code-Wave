@@ -24,18 +24,6 @@ generated client, and infrastructure neither of us needs to debug at 1am.
 `lib/db.ts` reads and writes one JSON file with plain `fs` calls — every
 line is something a first-year CS student can read start to finish.
 
-**Amendment, once we deployed to Vercel:** Vercel's production filesystem
-is read-only outside a temp folder, so the JSON file approach silently
-stops persisting writes once deployed — the app loads fine, but nothing
-you submit is actually saved. Rather than replace the JSON approach
-entirely, `lib/db.ts` now supports two backends behind the exact same
-functions: the local file when developing, and a hosted SQLite database
-(Turso, via `@libsql/client`) when a `TURSO_DATABASE_URL` environment
-variable is present. We picked Turso specifically because it's a pure-JS
-client with no native binary to download — the same problem that ruled
-out Prisma in the first place. Local development still needs zero setup;
-only a production deploy needs the extra environment variables.
-
 ## Chose: no login system
 
 **Rejected:** NextAuth, Clerk, a real accounts table.

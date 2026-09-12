@@ -1,43 +1,14 @@
 import fs from "node:fs";
 import path from "node:path";
 import { randomUUID } from "node:crypto";
-import { createClient } from "@libsql/client";
 import { DbShape, Course, Resource, Question, Answer, Role } from "./types";
 import { seedData } from "./seed";
 
-// --- Two storage modes, one interface ---
-//
-// Local dev: a JSON file on disk. Zero setup, works offline, easy to read.
-//
-// Production (Vercel): Vercel's filesystem is read-only outside of a
-// per-invocation temp folder, so a local JSON file can't persist writes
-// there. When TURSO_DATABASE_URL is set (i.e. you're deployed and configured
-// it), we store the exact same JSON blob as one row in a hosted SQLite
-// database instead — same data shape, same functions below, just a
-// different place to read/write it. See docs/decisions.md.
+// A single JSON file on disk as the data store. Zero setup, works offline,
+// easy to read and to explain line-by-line. See docs/decisions.md for why
+// this was chosen over a database.
 
 const DB_PATH = path.join(process.cwd(), "data", "db.json");
-const useTurso = Boolean(process.env.TURSO_DATABASE_URL);
-
-const tursoClient = useTurso
-  ? createClient({
-      url: process.env.TURSO_DATABASE_URL!,
-      authToken: process.env.TURSO_AUTH_TOKEN,
-    })
-  : null;
-
-let tableReady: Promise<void> | null = null;
-function ensureTursoTable(): Promise<void> {
-  if (!tursoClient) return Promise.resolve();
-  if (!tableReady) {
-    tableReady = tursoClient
-      .execute(
-        `CREATE TABLE IF NOT EXISTS store (id TEXT PRIMARY KEY, data TEXT NOT NULL)`
-      )
-      .then(() => undefined);
-  }
-  return tableReady;
-}
 
 function ensureLocalFile(): void {
   if (!fs.existsSync(DB_PATH)) {
@@ -46,32 +17,17 @@ function ensureLocalFile(): void {
   }
 }
 
+// Kept async even though the implementation underneath is now synchronous
+// fs calls — every caller already does `await getCourses()` etc., so this
+// keeps their signature and lets us swap the storage layer later without
+// touching call sites.
 async function readDb(): Promise<DbShape> {
-  if (tursoClient) {
-    await ensureTursoTable();
-    const result = await tursoClient.execute(
-      "SELECT data FROM store WHERE id = 'main'"
-    );
-    if (result.rows.length === 0) {
-      await writeDb(seedData);
-      return seedData;
-    }
-    return JSON.parse(result.rows[0].data as string) as DbShape;
-  }
   ensureLocalFile();
   const raw = fs.readFileSync(DB_PATH, "utf-8");
   return JSON.parse(raw) as DbShape;
 }
 
 async function writeDb(db: DbShape): Promise<void> {
-  if (tursoClient) {
-    await ensureTursoTable();
-    await tursoClient.execute({
-      sql: "INSERT INTO store (id, data) VALUES ('main', ?) ON CONFLICT(id) DO UPDATE SET data = excluded.data",
-      args: [JSON.stringify(db)],
-    });
-    return;
-  }
   fs.writeFileSync(DB_PATH, JSON.stringify(db, null, 2));
 }
 

@@ -60,24 +60,6 @@ npm run build    # production build, also type-checks everything
 4. Switch your role to **Senior** (click *edit* in the header) and answer
    the question you just asked — watch it flip to "Answered by a senior."
 
-## Deploying it for real (Vercel)
-
-Local dev needs none of this — it's only for a live, publicly-reachable
-deployment.
-
-The app works on Vercel out of the box for browsing. To make "Add a
-resource" and "Ask a senior" actually save once deployed (Vercel's
-production filesystem can't persist a local JSON file — see
-`docs/decisions.md`), set these two environment variables in your Vercel
-project's Settings → Environment Variables, from a free
-[Turso](https://turso.tech) database:
-
-- `TURSO_DATABASE_URL`
-- `TURSO_AUTH_TOKEN`
-
-Without them, the site still works — it just resets to the seed data on
-every deploy instead of saving new submissions.
-
 ## Architecture
 
 The short version: **Ask a senior** and **Share resources** are the same
