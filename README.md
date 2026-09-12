@@ -22,6 +22,14 @@ office hours or Discord. It just gives both of those things a permanent,
 searchable, course-shaped home.
 
 ## Screenshots
+<img width="1844" height="904" alt="92c1813f17023c06ff55004cf24c4924" src="https://github.com/user-attachments/assets/ea115be7-da7e-40fd-8781-952bef7f3f5b" />
+<img width="1844" height="906" alt="e731233a5d97137029af487259aa26b8" src="https://github.com/user-attachments/assets/2cda8dfd-dbab-4bfb-aa7f-4c0f55de174c" />
+<img width="1849" height="903" alt="c77fff0d64941906392e245d3cf4d29c" src="https://github.com/user-attachments/assets/4680c2c4-ed49-45ed-b497-8a172e1c2848" />
+<img width="1849" height="909" alt="25e136c8dc9f657f46cdf6bc8fbb6b65" src="https://github.com/user-attachments/assets/ce0dd938-b865-4cb6-a683-df9dcd048bba" />
+<img width="1850" height="906" alt="2a90893fa3910566447215761884fff6" src="https://github.com/user-attachments/assets/c3e27dcb-d167-4ffb-bd90-5638166fbf4a" />
+<img width="1849" height="903" alt="1fece16681cdc7e8d87affd0a0ec15ee" src="https://github.com/user-attachments/assets/d95be3ca-6e36-462c-b068-368516cba1fa" />
+<img width="1848" height="903" alt="c75d77372ca0044e4d67158066fda893" src="https://github.com/user-attachments/assets/2c83d43d-d0b3-469b-af06-723ab89d493d" />
+<img width="1850" height="903" alt="6d800239592d8d6d77451f23b206e833" src="https://github.com/user-attachments/assets/f0b7b7f0-aec0-4c90-a2f9-813bce03cd59" />
 
 Put the screenshots here
 
