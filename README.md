@@ -31,14 +31,6 @@ searchable, course-shaped home.
 <img width="1848" height="903" alt="c75d77372ca0044e4d67158066fda893" src="https://github.com/user-attachments/assets/2c83d43d-d0b3-469b-af06-723ab89d493d" />
 <img width="1850" height="903" alt="6d800239592d8d6d77451f23b206e833" src="https://github.com/user-attachments/assets/f0b7b7f0-aec0-4c90-a2f9-813bce03cd59" />
 
-Put the screenshots here
-
-| Home | Course hub | Ask a senior |
-|---|---|---|
-| `assets/home.png` | `assets/course-hub.png` | `assets/ask-thread.png` |
-
-See `assets/README.md` for the exact shots worth taking.
-
 ## Setup
 
 Requires Node 20+ (uses Node's built-in test runner + native TypeScript
