@@ -23,8 +23,7 @@ searchable, course-shaped home.
 
 ## Screenshots
 
-*(Replace these with real screenshots before submitting — judges only see
-the repo and these images, not a live demo.)*
+Put the screenshots here
 
 | Home | Course hub | Ask a senior |
 |---|---|---|
