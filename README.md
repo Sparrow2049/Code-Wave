@@ -83,7 +83,9 @@ waypoint/
 │   │   ├── ask/                all questions, + /ask/[id] thread view
 │   │   └── api/                POST endpoints the forms call
 │   ├── components/         ← what shows: cards, forms, badges
-│   └── lib/                 ← what thinks: types, data layer, pure helpers
+│   ├──lib/                ← what thinks: types, data layer, pure helpers
+│   └──types/
+│       └── resources/      ← is used to search inside the resources 
 ├── tests/                  ← unit tests for the pure helpers
 ├── data/                   ← generated JSON store (gitignored)
 └── assets/                 ← screenshots for this README
