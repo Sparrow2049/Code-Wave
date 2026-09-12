@@ -1,6 +1,6 @@
 @import "tailwindcss";
 
-/* Light Mode Colors */
+/* Light mode (default) */
 :root {
   --color-bg: #f1efea;
   --color-surface: #a3b7d1;
@@ -13,7 +13,7 @@
   --color-senior: #27865c;
 }
 
-/* Dark Mode Colors */
+/* Dark mode, toggled via a "dark" class on <html> (next-themes) */
 .dark {
   --color-bg: #0b0d10;
   --color-surface: #14171b;

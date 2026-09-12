@@ -10,8 +10,8 @@ export default async function ResourcesPage({
   searchParams: Promise<{ course?: string }>;
 }) {
   const { course } = await searchParams;
-  const courses = getCourses();
-  const resources = listResources(course);
+  const courses = await getCourses();
+  const resources = await listResources(course);
 
   return (
     <div className="mx-auto max-w-3xl px-6 py-10">

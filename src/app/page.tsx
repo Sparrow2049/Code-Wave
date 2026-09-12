@@ -2,19 +2,16 @@ import Link from "next/link";
 import { getCourses, listQuestions, listResources } from "@/lib/db";
 import CourseBadge from "@/components/CourseBadge";
 
-
-export default function HomePage() {
-  const courses = getCourses();
-  const questionCount = listQuestions().length;
-  const resourceCount = listResources().length;
+export default async function HomePage() {
+  const courses = await getCourses();
+  const questionCount = (await listQuestions()).length;
+  const resourceCount = (await listResources()).length;
 
   return (
     <div className="mx-auto max-w-5xl px-6 py-14">
       <h1 className="font-display text-4xl sm:text-5xl leading-tight text-text max-w-xl">
         Get through the semester with people who&apos;ve done it
       </h1>
-        
-      
       <p className="mt-4 max-w-md text-text-muted">
         Two tools, one place: ask the students who already survived a
         course, and find the notes and past papers they used to do it.

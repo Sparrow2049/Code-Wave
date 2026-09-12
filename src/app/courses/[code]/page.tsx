@@ -12,12 +12,12 @@ export default async function CoursePage({
   params: Promise<{ code: string }>;
 }) {
   const { code } = await params;
-  const course = getCourse(code);
+  const course = await getCourse(code);
   if (!course) notFound();
 
-  const resources = listResources(course.code);
-  const questions = listQuestions(course.code);
-  const courses = getCourses();
+  const resources = await listResources(course.code);
+  const questions = await listQuestions(course.code);
+  const courses = await getCourses();
 
   return (
     <div className="mx-auto max-w-5xl px-6 py-10">

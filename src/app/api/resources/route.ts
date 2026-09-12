@@ -12,7 +12,7 @@ export async function POST(req: NextRequest) {
   if (!isValidCourseCode(courseCode ?? "")) {
     return NextResponse.json({ error: "Invalid course code." }, { status: 400 });
   }
-  if (!getCourse(courseCode)) {
+  if (!(await getCourse(courseCode))) {
     return NextResponse.json({ error: "Unknown course." }, { status: 404 });
   }
   if (!title?.trim() || !url?.trim()) {
@@ -25,6 +25,6 @@ export async function POST(req: NextRequest) {
     return NextResponse.json({ error: "Invalid resource type." }, { status: 400 });
   }
 
-  const resource = addResource({ courseCode, title, type, url, addedBy });
+  const resource = await addResource({ courseCode, title, type, url, addedBy });
   return NextResponse.json(resource, { status: 201 });
 }

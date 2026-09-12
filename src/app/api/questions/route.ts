@@ -9,7 +9,7 @@ export async function POST(req: NextRequest) {
   if (!isValidCourseCode(courseCode ?? "")) {
     return NextResponse.json({ error: "Invalid course code." }, { status: 400 });
   }
-  if (!getCourse(courseCode)) {
+  if (!(await getCourse(courseCode))) {
     return NextResponse.json({ error: "Unknown course." }, { status: 404 });
   }
   if (!title?.trim() || !questionBody?.trim()) {
@@ -19,7 +19,7 @@ export async function POST(req: NextRequest) {
     );
   }
 
-  const question = addQuestion({
+  const question = await addQuestion({
     courseCode,
     title,
     body: questionBody,

@@ -15,17 +15,26 @@ sharper app beats a shallow four-in-one.
 
 ## Chose: one JSON file over a database
 
-**Rejected:** Prisma + SQLite, Supabase/Postgres.
+**Rejected (at first):** Prisma + SQLite, Supabase/Postgres.
 
 A real database is the "correct" answer for a growing app. It's the wrong
 answer for a few-day hackathon judged on whether every teammate can
 explain every line (rule 3): a database means a schema migration step, a
 generated client, and infrastructure neither of us needs to debug at 1am.
 `lib/db.ts` reads and writes one JSON file with plain `fs` calls — every
-line is something a first-year CS student can read start to finish. It's
-also isolated behind a handful of functions (`getCourses`, `addResource`,
-etc.), so swapping in a real database later is a contained change, not a
-rewrite.
+line is something a first-year CS student can read start to finish.
+
+**Amendment, once we deployed to Vercel:** Vercel's production filesystem
+is read-only outside a temp folder, so the JSON file approach silently
+stops persisting writes once deployed — the app loads fine, but nothing
+you submit is actually saved. Rather than replace the JSON approach
+entirely, `lib/db.ts` now supports two backends behind the exact same
+functions: the local file when developing, and a hosted SQLite database
+(Turso, via `@libsql/client`) when a `TURSO_DATABASE_URL` environment
+variable is present. We picked Turso specifically because it's a pure-JS
+client with no native binary to download — the same problem that ruled
+out Prisma in the first place. Local development still needs zero setup;
+only a production deploy needs the extra environment variables.
 
 ## Chose: no login system
 

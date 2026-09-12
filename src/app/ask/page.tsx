@@ -10,8 +10,8 @@ export default async function AskPage({
   searchParams: Promise<{ course?: string }>;
 }) {
   const { course } = await searchParams;
-  const courses = getCourses();
-  const questions = listQuestions(course);
+  const courses = await getCourses();
+  const questions = await listQuestions(course);
 
   return (
     <div className="mx-auto max-w-3xl px-6 py-10">

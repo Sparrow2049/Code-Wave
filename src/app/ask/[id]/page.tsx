@@ -10,7 +10,7 @@ export default async function QuestionPage({
   params: Promise<{ id: string }>;
 }) {
   const { id } = await params;
-  const question = getQuestion(id);
+  const question = await getQuestion(id);
   if (!question) notFound();
 
   return (

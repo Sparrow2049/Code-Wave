@@ -10,7 +10,7 @@ export async function POST(
   const body = await req.json();
   const { body: answerBody, answeredBy, role } = body ?? {};
 
-  if (!getQuestion(id)) {
+  if (!(await getQuestion(id))) {
     return NextResponse.json({ error: "Question not found." }, { status: 404 });
   }
   if (!answerBody?.trim()) {
@@ -20,7 +20,7 @@ export async function POST(
     return NextResponse.json({ error: "Invalid role." }, { status: 400 });
   }
 
-  const answer = addAnswer(id, {
+  const answer = await addAnswer(id, {
     body: answerBody,
     answeredBy,
     role: role as Role,
